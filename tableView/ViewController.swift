@@ -14,9 +14,9 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     //ランダムになる値を用意する
     //let number = Array(1...100)
-    //let number = random()[in: 0..<20]
-    //let number :[String] = [1...100]
-    
+    let number = Int.random(in: 0..<100)
+    //let number : as; String =
+    //let number = [String]()
     // 空の配列を宣言
 //    var number: [Int] = []
 //
@@ -41,9 +41,10 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
          as! TableViewCell
 
         
-        let nowIndexPathString = number[indexPath.row]
-        cell.label.text = nowIndexPathString["number"]
+//        let nowIndexPathString = number[indexPath.row]
+//        cell.label.text = nowIndexPathString[number]
         //cell.textLabel?.text = String(number)
+        cell.label.text = String(number)
         return cell
     }
     
