@@ -10,27 +10,44 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
-    @IBOutlet var table: UITableView!
+    
     
     //ランダムになる値を用意する
-    let number = Array(1...100)
-    //let number = Int.random(in: 0..<20)
-    //var number:[String] = [1...100]
+    //let number = Array(1...100)
+    //let number = random()[in: 0..<20]
+    //let number :[String] = [1...100]
+    
+    // 空の配列を宣言
+//    var number: [Int] = []
+//
+//    for (var i = 0; i < 10; i++) {
+//
+//    //乱数を生成
+//    var rand = Int(arc4random_uniform(UInt32(10)))
+//
+//    //乱数を配列に格納
+//    Array.append(rand)
+//    }
+    
+    
+    //let number = arc4random() % 10
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default , reuseIdentifier: "MyCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell",for: indexPath)
+         as! TableViewCell
 
-        cell.textLabel?.text = "\(self.number[indexPath.row])"
+        
+        let nowIndexPathString = number[indexPath.row]
+        cell.label.text = nowIndexPathString["number"]
         //cell.textLabel?.text = String(number)
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = self.tableView(tableView: table, didSelectRowAtIndexPath: indexPath)
-    }
+   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
