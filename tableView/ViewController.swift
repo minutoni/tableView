@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
 
         
 //        let nowIndexPathString = number[indexPath.row]
-        //cell.label.text =  Int.random(in: 0..<100)
+        cell.label.text =  String(Int.random(in: 0..<100))
         //cell.textLabel?.text = String(number)
         
         //cell.label.text = String(number)

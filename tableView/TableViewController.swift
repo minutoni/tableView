@@ -61,14 +61,15 @@ class TableViewController: UITableViewController {
             as! TableViewCell
         
         
-        let randomElement = number.randomElement()
+        //let randomElement = number.randomElement()
         
         //        let nowIndexPathString = number[indexPath.row]
         //        cell.label.text = nowIndexPathString[number]
         //cell.textLabel?.text = String(number)
         
         //cell.label.text = Int.random(in: 0..<100)
-        cell.label.text = ("\(number[indexPath.row])")
+        //cell.label.text = ("\(number[indexPath.row])")
+        cell.label.text =  String(Int.random(in: 0..<100))
         
         return cell
     }
