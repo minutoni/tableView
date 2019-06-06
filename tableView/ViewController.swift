@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     @IBOutlet var tableView: UITableView!
     //ランダムになる値を用意する
     //let number = Array(1...100)
-    let number = Int.random(in: 0..<100)
+    //let number = Int.random(in: 0..<100)
     //let number : as; String =
     //let number = [String]()
     // 空の配列を宣言
@@ -34,6 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
+      
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,10 +43,11 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
 
         
 //        let nowIndexPathString = number[indexPath.row]
-//        cell.label.text = nowIndexPathString[number]
+        //cell.label.text =  Int.random(in: 0..<100)
         //cell.textLabel?.text = String(number)
         
-        cell.label.text = String(number)
+        //cell.label.text = String(number)
+        
         return cell
     }
     
@@ -60,13 +62,18 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//       table.delegate = self
-//        table.dataSource = self
-        
+
          tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "MyCell")
     }
     
-
+    override func viewWillAppear(_ animated: Bool)  {
+        
+        super.viewWillAppear(true)
+//        if saveData.array(forKey: "WORD") != nil {
+//            wordArray = saveData.array(forKey: "WORD") as! [Dictionary<String,String>]
+//        }
+        tableView.reloadData()
+    }
 
 
 }
