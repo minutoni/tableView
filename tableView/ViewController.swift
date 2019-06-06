@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     
-    
+    @IBOutlet var tableView: UITableView!
     //ランダムになる値を用意する
     //let number = Array(1...100)
     let number = Int.random(in: 0..<100)
@@ -44,6 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
 //        let nowIndexPathString = number[indexPath.row]
 //        cell.label.text = nowIndexPathString[number]
         //cell.textLabel?.text = String(number)
+        
         cell.label.text = String(number)
         return cell
     }
@@ -61,7 +62,11 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         // Do any additional setup after loading the view.
 //       table.delegate = self
 //        table.dataSource = self
+        
+         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "MyCell")
     }
+    
+
 
 
 }
