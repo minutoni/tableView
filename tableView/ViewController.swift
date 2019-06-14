@@ -17,17 +17,17 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     //let number = Int.random(in: 0..<100)
     //let number : as; String =
     //let number = [String]()
-    // 空の配列を宣言
+//    //空の配列を宣言
 //    var number: [Int] = []
 //
-//    for (var i = 0; i < 10; i++) {
+//    //for (var i = 0; i < 10; i++) {
 //
 //    //乱数を生成
 //    var rand = Int(arc4random_uniform(UInt32(10)))
 //
 //    //乱数を配列に格納
 //    Array.append(rand)
-//    }
+//    //}
     
     
     //let number = arc4random() % 10
@@ -41,9 +41,8 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell",for: indexPath)
          as! TableViewCell
 
-        
 //        let nowIndexPathString = number[indexPath.row]
-        cell.label.text =  String(Int.random(in: 0..<100))
+        //cell.label.text =  String(number)
         //cell.textLabel?.text = String(number)
         
         //cell.label.text = String(number)

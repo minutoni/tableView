@@ -9,28 +9,18 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+    
+    
+    //ランダム変数を宣言
+    //var array: [Int] = [1...20]
+   let int = Int.random(in: 1..<100)
+    
+    let numbers : [Int] = [Int(arc4random())]
 
-    //@IBOutlet var tableView: UITableView!
-    //ランダムになる値を用意する
-    let number = Array(1...100)
-    
-    //let number = Int.random(in: 0..<100)
-    //let number : as; String =
-    //let number = [String]
-    // 空の配列を宣言
-    //    var number: [Int] = []
-    //
-    //    for (var i = 0; i < 10; i++) {
-    //
-    //    //乱数を生成
-    //    var rand = Int(arc4random_uniform(UInt32(10)))
-    //
-    //    //乱数を配列に格納
-    //    Array.append(rand)
-    //    }
+    //ランダムな値を格納するための配列を20個作る
+    var array = Array(1...20)
     
     
-    //let number = arc4random() % 10
     
     
     override func viewDidLoad() {
@@ -56,20 +46,18 @@ class TableViewController: UITableViewController {
         return 20
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell",for: indexPath)
             as! TableViewCell
         
         
-        //let randomElement = number.randomElement()
+        //ラベルに配列に入れたランダムな値20個を代入する
         
-        //        let nowIndexPathString = number[indexPath.row]
-        //        cell.label.text = nowIndexPathString[number]
-        //cell.textLabel?.text = String(number)
-        
-        //cell.label.text = Int.random(in: 0..<100)
-        //cell.label.text = ("\(number[indexPath.row])")
-        cell.label.text =  String(Int.random(in: 0..<100))
+        //cell.label.text = array
+       // cell.label.text =  String(Int.random(in: 0..<100))
+        cell.label.text = String(arc4random(1...100))
         
         return cell
     }
@@ -77,10 +65,13 @@ class TableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool)  {
         
         super.viewWillAppear(true)
-        //        if saveData.array(forKey: "WORD") != nil {
-        //            wordArray = saveData.array(forKey: "WORD") as! [Dictionary<String,String>]
-        //        }
-       // tableView.reloadData()
+
+    }
+    
+
+    //空の配列２０個にランダムな値をそれぞれ入れるメソッドを作る
+    func hairetsu(){
+        array = Array(int)
     }
     
     
