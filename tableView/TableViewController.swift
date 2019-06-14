@@ -19,7 +19,7 @@ class TableViewController: UITableViewController {
 
     //ランダムな値を格納するための配列を20個作る
     var array = Array(1...20)
-    
+    //var array2 : String = String(int)
     
     
     
@@ -52,15 +52,24 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell",for: indexPath)
             as! TableViewCell
         
-        
+        //hairetsu()
         //ラベルに配列に入れたランダムな値20個を代入する
         
         //cell.label.text = array
        // cell.label.text =  String(Int.random(in: 0..<100))
-        cell.label.text = String(arc4random(1...100))
+        array = [int]
+        //こうしたい↓
+        cell.label.text = "\(array[indexPath.row])"
         
         return cell
     }
+    
+    //空の配列２０個にランダムな値をそれぞれ入れるメソッドを作る
+//    func hairetsu(){
+//        array = [int]
+//    }
+    
+    
     
     override func viewWillAppear(_ animated: Bool)  {
         
@@ -68,14 +77,8 @@ class TableViewController: UITableViewController {
 
     }
     
-
-    //空の配列２０個にランダムな値をそれぞれ入れるメソッドを作る
-    func hairetsu(){
-        array = Array(int)
-    }
-    
-    
 }
+
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
