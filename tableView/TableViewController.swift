@@ -13,13 +13,15 @@ class TableViewController: UITableViewController {
     
     //ランダム変数を宣言
     //var array: [Int] = [1...20]
-   let int = Int.random(in: 1..<100)
+   var int = Int.random(in: 1..<100)
     
     let numbers : [Int] = [Int(arc4random())]
+    
 
     //ランダムな値を格納するための配列を20個作る
-    var array = Array(1...20)
-    //var array2 : String = String(int)
+    var array = Array(1...100)
+    var shuffledArray: [Int] = []
+    var array2 : [Int] = []
     
     
     
@@ -55,19 +57,26 @@ class TableViewController: UITableViewController {
         //hairetsu()
         //ラベルに配列に入れたランダムな値20個を代入する
         
-        //cell.label.text = array
-       // cell.label.text =  String(Int.random(in: 0..<100))
-        array = [int]
+        //cell.label.text = String(int)
+       //cell.label.text =  String(Int.random(in: 0..<100))
+        //array = [int]
+        array2 = [int]
+        shuffle()
         //こうしたい↓
-        cell.label.text = "\(array[indexPath.row])"
+        //cell.label.text = "\(array[indexPath.row])"
+    cell.label.text  = "\(shuffledArray[indexPath.row])"
         
         return cell
     }
     
     //空の配列２０個にランダムな値をそれぞれ入れるメソッドを作る
-//    func hairetsu(){
-//        array = [int]
-//    }
+    func shuffle(){
+        while array.count > 0 {
+            let index = Int(arc4random()) % array.count
+            shuffledArray.append(array[index])
+            array.remove(at: index)
+        }
+    }
     
     
     
